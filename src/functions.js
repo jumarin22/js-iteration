@@ -201,10 +201,9 @@ function someoneToLove(strings) {
  */
 
 function objectKeys(objectOfHobbies) {
-  const answer = Object.entries(objectOfHobbies).map(
+  return Object.entries(objectOfHobbies).map(
     ([key, value]) => `${key} - ${value.title}`
   )
-  return answer
 }
 
 /**
