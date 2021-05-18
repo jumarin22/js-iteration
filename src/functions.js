@@ -103,8 +103,10 @@ function onlyTheEvenIndexedSurvive(numbers) {
  */
 
 function bestMoviesOfTheYear(movieObjectArray, year) {
-  const matchYear = movieObjectArray.filter(movie => movie.year === year)
-  return matchYear.filter(movie => movie.score > 90).map(movie => movie.name)
+  return movieObjectArray
+    .filter(movie => movie.year === year)
+    .filter(movie => movie.score > 90)
+    .map(movie => movie.name)
 }
 
 /*
@@ -130,10 +132,7 @@ function everyoneIsOdd(numbers) {
  */
 
 function findTheNeedle(strings) {
-  function haystack(word) {
-    return word.includes('needle')
-  }
-  return strings.find(haystack)
+  return strings.find(string => string.includes('needle'))
 }
 
 /*
@@ -146,10 +145,7 @@ function findTheNeedle(strings) {
  */
 
 function findTheNeedleIndex(strings) {
-  function haystack(word) {
-    return word.includes('needle')
-  }
-  return strings.findIndex(haystack)
+  return strings.findIndex(haystack => haystack.includes('needle'))
 }
 /*
  *` 10)  Define a function someoneToLove that accepts an array of
@@ -161,10 +157,7 @@ function findTheNeedleIndex(strings) {
  */
 
 function someoneToLove(strings) {
-  function four(word) {
-    return word.length === 4
-  }
-  return strings.some(four)
+  return strings.some(word => word.length === 4)
 }
 
 /*
